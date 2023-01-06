@@ -4,8 +4,6 @@ import router from './router.js';
 
 import connectDatabase from '../utils/db.js';
 
-dotenv.config();
-
 const app: Express = express();
 const PORT = process.env.PORT;
 
