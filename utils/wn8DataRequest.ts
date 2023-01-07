@@ -1,6 +1,5 @@
-const requestUrl: string = 'https://static.modxvm.com/wn8-data-exp/json/wn8exp.json';
-
-export default async function getWn8Values() {
+export async function getWn8Data() {
+    const requestUrl: string = 'https://static.modxvm.com/wn8-data-exp/json/wn8exp.json';
     const response = await fetch(requestUrl);
     const data: IResponseDataXvm = await response.json();
     return data;
