@@ -1,7 +1,7 @@
 import express, { Express } from 'express';
 import bodyParser from 'body-parser';
 import router from './router.js';
-import connectDatabase from '../utils/db.js';
+import connectDatabase from './config/db.js';
 
 const app: Express = express();
 const PORT = process.env.PORT;
