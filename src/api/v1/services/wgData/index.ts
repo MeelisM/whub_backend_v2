@@ -28,5 +28,19 @@ interface IResponseDataWargaming {
         limit: number;
         page: number;
     };
-    data?: [];
+    data: IResponseDataWargamingSingleTank[];
+}
+
+interface IResponseDataWargamingSingleTank {
+    is_gift: boolean;
+    is_wheeled: boolean;
+    short_name: string;
+    nation: string;
+    is_premium: boolean;
+    tier: number;
+    images: {
+        contour_icon: string;
+    };
+    type: string;
+    tank_id: number;
 }
