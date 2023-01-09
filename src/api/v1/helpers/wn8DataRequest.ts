@@ -1,4 +1,4 @@
-export async function getWn8Data() {
+export async function getWn8Data(): Promise<IResponseDataXvm> {
     const requestUrl: string = 'https://static.modxvm.com/wn8-data-exp/json/wn8exp.json';
     const response = await fetch(requestUrl);
 
@@ -10,19 +10,17 @@ export async function getWn8Data() {
 }
 
 interface IResponseDataXvm {
-    data: Array<ISingleTankXvm>;
+    data: {
+        IDNum: number;
+        expDef: number;
+        expFrag: number;
+        expSpot: number;
+        expDamage: number;
+        expWinRate: number;
+    }[];
     header: {
         url: string;
         source: string;
         version: string;
     };
-}
-
-interface ISingleTankXvm {
-    IDNum: number;
-    expDef: number;
-    expFrag: number;
-    expSpot: number;
-    expDamage: number;
-    expWinRate: number;
 }
