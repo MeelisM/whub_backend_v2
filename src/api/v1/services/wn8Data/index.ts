@@ -1,12 +1,18 @@
 export async function getWn8Data(): Promise<IResponseDataXvm> {
     const requestUrl: string = 'https://static.modxvm.com/wn8-data-exp/json/wn8exp.json';
-    const response = await fetch(requestUrl);
 
-    if (!response.ok) {
-        throw new Error(response.statusText);
+    try {
+        const response = await fetch(requestUrl);
+        const data = await response.json();
+
+        if (!response.ok) {
+            console.log(response.statusText);
+        }
+
+        return data as IResponseDataXvm;
+    } catch (error) {
+        throw new Error(`Something went wrong with the request url ${requestUrl}`);
     }
-    const data: IResponseDataXvm = await response.json();
-    return data;
 }
 
 interface IResponseDataXvm {
@@ -24,3 +30,4 @@ interface IResponseDataXvm {
         version: string;
     };
 }
+getWn8Data();
