@@ -1,1 +1,1 @@
-# whub_backend_v2
+# whub backend v2
