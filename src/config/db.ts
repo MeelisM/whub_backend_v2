@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-async function connectDatabase() {
+async function connectDatabase(): Promise<void> {
     const dbUri = process.env.MONGO_URI as string;
 
     try {
