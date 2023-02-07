@@ -6,9 +6,9 @@ async function connectDatabase(): Promise<void> {
     try {
         mongoose.set('strictQuery', false);
         await mongoose.connect(dbUri);
-        console.log('[DATABASE]: Connected successfully');
+        console.log('[DATABASE]: Connected successfully!');
     } catch (error) {
-        console.log('[DATABASE]: Could not connect', error);
+        console.log('[DATABASE]: Could not connect!', error);
         process.exit(1);
     }
 }
